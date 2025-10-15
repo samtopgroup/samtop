@@ -6,7 +6,8 @@ import Contact from "@/pages/Contact";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function App() {
+// 确保App组件正确导出
+const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -16,9 +17,13 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          {/* 添加通配符路由，确保任何未匹配的路径都重定向到首页 */}
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
       <Footer />
     </div>
   );
-}
+};
+
+export default App;
