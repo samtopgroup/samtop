@@ -1,47 +1,47 @@
 # SAMTOP GROUP LIMITED Website
 
-This is the official website for SAMTOP GROUP LIMITED, built with React, TypeScript, and Tailwind CSS.
+A professional business website for SAMTOP GROUP LIMITED, showcasing their global business solutions.
 
 ## Deployment to GitHub Pages
 
-Follow these steps to deploy the website to GitHub Pages:
+### Prerequisites
+- Node.js installed
+- pnpm package manager installed
+- GitHub account
 
-### 1. Prerequisites
-- Ensure you have Node.js and npm/pnpm installed
-- Create a GitHub repository for the project
+### Deployment Steps
 
-### 2. Install Dependencies
-```bash
-pnpm install
-```
+1. Clone this repository
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+3. Build the project:
+   ```bash
+   pnpm build
+   ```
+4. Deploy to GitHub Pages:
+   ```bash
+   pnpm deploy
+   ```
 
-### 3. Configure GitHub Pages Settings
-- In your GitHub repository, go to Settings > Pages
-- Under "Build and deployment", select "Deploy from a branch"
-- Choose the branch you want to deploy from (usually 'main' or 'master')
-- Set the folder to '/ (root)'
-- Click "Save"
+### Custom Domain Configuration
 
-### 4. Build and Deploy
-```bash
-# Build the project
-pnpm build
+To use your custom domain (samtopgroup.com):
 
-# Deploy to GitHub Pages
-pnpm deploy
-```
+1. Add a `CNAME` file to the `public` directory with your domain name:
+   ```
+   samtopgroup.com
+   ```
+2. Configure DNS settings at your domain registrar:
+   - Add an A record pointing to GitHub Pages IP addresses
+   - Or add a CNAME record pointing to your GitHub Pages URL
 
-### 5. Custom Domain Configuration
-If you want to use your custom domain (samtopgroup.com):
-1. Go to your domain registrar's website
-2. Configure DNS records to point to GitHub Pages:
-   - Add an A record pointing to GitHub's IP addresses: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
-   - Add a CNAME record pointing to your GitHub Pages URL (username.github.io)
-3. In your GitHub repository settings, go to Pages > Custom domain
-4. Enter your custom domain (samtopgroup.com) and click "Save"
-5. Enable HTTPS by checking the "Enforce HTTPS" option
+### Troubleshooting
 
-### Notes
-- For subdirectory deployment, update the `base` property in `vite.config.ts` to match your repository name
-- Wait a few minutes for GitHub Pages to propagate your changes
-- Check the "Actions" tab in your repository for deployment status
+If you encounter a blank page after deployment:
+1. Ensure `HashRouter` is used instead of `BrowserRouter`
+2. Verify the `.nojekyll` file exists in the root directory
+3. Check that your repository has the correct GitHub Pages settings
+
+For more detailed information, visit the [GitHub Pages documentation](https://docs.github.com/en/pages).
